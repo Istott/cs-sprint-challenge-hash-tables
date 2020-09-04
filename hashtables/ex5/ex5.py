@@ -7,21 +7,34 @@ def finder(files, queries):
     YOUR CODE HERE
     """
     # Your code here
+
+    # first attempt. passed first test. not second.
+
+    # result = []
+    # table = {}
+
+    # for i in files:
+    #     filename = i.split("/")[-1]
+    #     if filename not in table:
+    #         table[filename] = i
+    #     # table[filename].append(i)
+    
+    # for i in queries:
+    #     if i in table:
+    #         result.append(table[i])
+
+##############
+
     result = []
     table = {}
-
+    
+    for i in range(len(queries)):
+        table[queries[i]] = True
+    
     for i in files:
         filename = i.split("/")[-1]
-        if filename not in table:
-            table[filename] = i
-        # table[filename].append(i)
-    
-    for i in queries:
-        if i in table:
-            result.append(table[i])
-
-
-    result.sort()
+        if filename in table:
+            result.append(i)
 
     return result
 
